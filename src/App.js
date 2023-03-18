@@ -4,7 +4,7 @@ import Test1 from "./Test1";
 function App() {
   return (
     <>
-      <Test1 arg={120} />
+      <Test1 />
     </>
   );
 }
