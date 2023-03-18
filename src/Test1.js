@@ -1,9 +1,9 @@
 import React from "react";
 
 class Test1 extends React.Component {
-  constructor() {
+  constructor(props) {
     console.clear();
-    console.log("constructor");
+    console.log(props);
     super();
     this.state = {
       s1: 0,
@@ -15,6 +15,11 @@ class Test1 extends React.Component {
     val++;
     this.setState({ s1: val });
   };
+
+  static getDerivedStateFromProps(props, state) {
+    console.log("ger derive state");
+    return null;
+  }
 
   render() {
     console.log("render 1");
