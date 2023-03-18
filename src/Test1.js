@@ -1,8 +1,19 @@
 import React from "react";
 
 class Test1 extends React.Component {
+  constructor() {
+    console.clear();
+    console.log("constructor");
+    super();
+    this.state = {
+      s1: 0,
+    };
+  }
+
   buttonHandler = () => {
-    console.log("work");
+    let val = this.state.s1;
+    val++;
+    this.setState({ s1: val });
   };
 
   render() {
@@ -13,7 +24,8 @@ class Test1 extends React.Component {
         <div>
           <button onClick={this.buttonHandler}>Push</button>
         </div>
-        <div></div>
+
+        <div className="stateOut">{this.state.s1}</div>
       </>
     );
   }
